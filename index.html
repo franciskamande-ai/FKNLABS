@@ -55,6 +55,57 @@ section h2 {font-family:'Playfair Display', serif;font-size:36px;margin-bottom:2
 .contact input, .contact textarea {margin:10px 0;padding:12px;border-radius:5px;border:none;}
 .contact button {padding:12px;background:#D4AF37;color:#000;font-weight:bold;border-radius:5px;transition:.3s;cursor:pointer;}
 .contact button:hover {background:#b6932d;}
+/* Recognition Section */
+#recognition {
+    padding: 50px 20px;
+    background: #111; /* slightly different dark to separate visually */
+}
+
+#recognition h2 {
+    text-align: center;
+    color: #D4AF37;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+#recognition .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#recognition .card {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+#recognition .card img {
+    max-width: 100px;
+    margin-bottom: 15px;
+    border-radius: 50%; /* optional, makes it circular */
+}
+
+#recognition .card h3 {
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+#recognition .card p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#recognition .card:hover {
+    background: #333;
+    transform: translateY(-5px);
+}
+
 
 /* --- Footer --- */
 footer {background:#000;padding:30px;text-align:center;margin-top:50px;}
@@ -128,7 +179,7 @@ footer .social a {margin:0 10px;color:#D4AF37;}
       <li>Case Study — Shanghai Tower: Market data indicated increased domestic and foreign investment interest post-completion.</li>
     </ul>
     <p>This research highlights how physical mega-projects can signal economic strength, influencing trading strategies and macroeconomic models. Future work involves integrating these signals into predictive ML models for market behavior.</p>
-    <a href="#" style="color:#D4AF37;text-decoration:underline;">Download Full Paper (PDF)</a>
+    <a href="https://github.com/franciskamande-ai/FKNLABS/blob/main/The%20Skyscraper%20Effect.pdf" style="color:#D4AF37;text-decoration:underline;">Download Full Paper (PDF)</a>
   </div>
 </section>
 
@@ -163,6 +214,29 @@ footer .social a {margin:0 10px;color:#D4AF37;}
     </a>
   </form>
 </section>
+<!-- Recognition Section -->
+<section id="recognition">
+  <h2>Recognition & Collaborators</h2>
+  <div class="grid">
+    <!-- First Collaborator -->
+    <div class="card">
+      <img src="assets/images/kay-ojay.png" alt="Kay Ojay Omondi">
+      <h3>Kay Ojay Omondi</h3>
+      <p>Contributed to the research of the Skyscraper Effect and co-authored a paper on Marine Traffic & Commodity Markets.</p>
+      <a href='https://wa.me/254752005079?'>Contact Kay</a>
+    </div>
+    
+    <!-- Add more collaborators as needed -->
+    <!--
+    <div class="card">
+      <img src="assets/images/collaborator2.png" alt="Collaborator Name">
+      <h3>Collaborator Name</h3>
+      <p>Short description of contribution.</p>
+    </div>
+    -->
+  </div>
+</section>
+
 
 <!-- Footer -->
 <footer>
@@ -175,4 +249,5 @@ footer .social a {margin:0 10px;color:#D4AF37;}
 
 </body>
 </html>
+
 

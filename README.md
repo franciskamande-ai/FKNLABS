@@ -25,6 +25,3 @@ FKNLABS is the official portfolio and research hub of Francis Kamande (FK), a Qu
 - **Contact Form**: Email/WhatsApp ready for inquiries from collaborators, employers, and researchers.  
 
 ---
-
-```html
-<a href="papers/your-paper.pdf" download>Download Full Paper</a>

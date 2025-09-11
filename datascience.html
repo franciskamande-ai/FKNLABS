@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FKNLABS | Data Science Hub</title>
+<style>
+/* ----------------- Global ----------------- */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background: #1C1C1C;
+  color: #fff;
+}
+a { text-decoration: none; color: inherit; }
+h1,h2,h3,h4 { font-family:'Playfair Display', serif; }
+
+/* -------------- Navbar ------------------ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #000;
+}
+nav .logo { font-size:28px; color:#D4AF37; font-weight:bold; }
+nav ul { list-style:none; display:flex; }
+nav ul li { margin-left:30px; }
+nav ul li a { font-weight:bold; transition:.3s; }
+nav ul li a:hover { color:#D4AF37; }
+
+/* -------------- Hero ------------------ */
+.hero {
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; height:50vh; background:#000;
+}
+.hero h1 { font-size:50px; color:#D4AF37; margin-bottom:10px; }
+.hero p { font-size:18px; color:#fff; max-width:700px; }
+
+/* -------------- Sections ----------------- */
+section { padding:50px 20px; }
+section h2 { font-size:36px; color:#D4AF37; text-align:center; margin-bottom:30px; }
+
+/* -------------- Models Grid ----------------- */
+.models-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  justify-items:center;
+}
+.model-card {
+  background:#222;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  transition: transform .3s, background .3s;
+  width:250px;
+}
+.model-card:hover { background:#333; transform: translateY(-5px); }
+.model-card h3 { color:#D4AF37; margin-bottom:10px; }
+.model-card p { font-size:14px; margin-bottom:10px; }
+.model-card .btn-contact {
+  display:inline-block;
+  padding:8px 15px;
+  background:#D4AF37;
+  color:#000;
+  border-radius:8px;
+  font-weight:bold;
+  transition:.3s;
+}
+.model-card .btn-contact:hover { background:#b6932d; color:#fff; transform:translateY(-2px); }
+
+/* -------------- Data Download ----------------- */
+.data-download {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+  justify-items:center;
+  margin-top:20px;
+}
+.data-card {
+  background:#222;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  transition:.3s;
+  width:200px;
+}
+.data-card:hover { background:#333; transform:translateY(-5px); }
+.data-card a { color:#D4AF37; font-weight:bold; }
+
+/* -------------- Leaderboard ----------------- */
+.leaderboard {
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  max-width:800px;
+  margin:0 auto;
+}
+.leaderboard table {
+  width:100%;
+  border-collapse: collapse;
+}
+.leaderboard th, .leaderboard td {
+  padding:10px;
+  border-bottom:1px solid #444;
+  text-align:center;
+}
+.leaderboard th { color:#D4AF37; }
+.leaderboard tr:hover { background:#222; }
+
+/* -------------- Footer ----------------- */
+footer {
+  background:#000;
+  text-align:center;
+  padding:30px;
+  margin-top:50px;
+}
+footer .social a { margin:0 10px; color:#D4AF37; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">FKNLABS</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#models">Models</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="#leaderboard">Leaderboard</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <h1>FKNLABS Data Science Hub</h1>
+  <p>Explore machine learning models, financial datasets, competitions, and research. Free stock market data for AI/ML enthusiasts.</p>
+</header>
+
+<!-- Models Section -->
+<section id="models">
+  <h2>Models & Performance</h2>
+  <div class="models-grid">
+    <!-- Example Model Card -->
+    <div class="model-card">
+      <h3>Random Forest Predictor</h3>
+      <p>Predicting short-term stock price movement on Forex data. Accuracy: 73% | Sharpe Ratio: 1.6</p>
+      <a href="https://wa.me/254769043920" target="_blank" class="btn-contact">Contact for Details</a>
+    </div>
+    <div class="model-card">
+      <h3>Monte Carlo Simulation</h3>
+      <p>Simulates portfolio value distributions across multiple assets. Useful for risk assessment.</p>
+      <a href="https://wa.me/254769043920" target="_blank" class="btn-contact">Contact for Details</a>
+    </div>
+    <!-- Add more model cards -->
+  </div>
+</section>
+
+<!-- Data Download Section -->
+<section id="data">
+  <h2>Download Cleaned Stock Market Data</h2>
+  <div class="data-download">
+    <div class="data-card">
+      <h4>Forex 2024</h4>
+      <p>Cleaned historical Forex data for ML training.</p>
+      <a href="#">Download CSV</a>
+    </div>
+    <div class="data-card">
+      <h4>Equities 2024</h4>
+      <p>Daily OHLC data for major stocks.</p>
+      <a href="#">Download CSV</a>
+    </div>
+    <div class="data-card">
+      <h4>Macro Indicators</h4>
+      <p>CPI, PPI, GDP, Interest rates for ML models.</p>
+      <a href="#">Download CSV</a>
+    </div>
+    <!-- Add more datasets -->
+  </div>
+</section>
+
+<!-- Leaderboard Section -->
+<section id="leaderboard">
+  <h2>ML Model Leaderboard</h2>
+  <div class="leaderboard">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Model</th>
+          <th>Accuracy / Performance</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Random Forest Predictor</td><td>73%</td><td>FK</td></tr>
+        <tr><td>2</td><td>Monte Carlo Simulation</td><td>–</td><td>FK</td></tr>
+        <tr><td>3</td><td>Neural Network Price Predictor</td><td>68%</td><td>FK</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>For collaboration or data requests:</p>
+  <a href="https://wa.me/254769043920" target="_blank" class="btn-contact">WhatsApp Contact</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 FKNLABS | Designed by FK</p>
+</footer>
+
+</body>
+</html>

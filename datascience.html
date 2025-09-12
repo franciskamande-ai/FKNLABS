@@ -108,6 +108,59 @@ section h2 { font-size:36px; color:#D4AF37; text-align:center; margin-bottom:30p
 }
 .leaderboard th { color:#D4AF37; }
 .leaderboard tr:hover { background:#222; }
+/* Dataset Section */
+.dataset {
+  background-color: #111; /* Deep black background */
+  border: 1px solid #D4AF37; /* Gold border */
+  border-radius: 12px;
+  padding: 20px;
+  margin: 25px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Dataset title */
+.dataset h2 {
+  color: #D4AF37;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Dataset description */
+.dataset p {
+  color: #EEE;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+/* Download button */
+.dataset a {
+  display: inline-block;
+  background-color: #D4AF37;
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.dataset a:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Code snippet styling */
+pre, code {
+  font-family: 'Fira Code', monospace;
+  background-color: #000;
+  color: #D4AF37;
+  padding: 15px;
+  border-radius: 10px;
+  display: block;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
 
 /* -------------- Footer ----------------- */
 footer {
@@ -162,23 +215,177 @@ footer .social a { margin:0 10px; color:#D4AF37; }
 <!-- Data Download Section -->
 <section id="data">
   <h2>Download Cleaned Stock Market Data</h2>
-  <div class="data-download">
-    <div class="data-card">
-      <h4>Forex 2024</h4>
-      <p>Cleaned historical Forex data for ML training.</p>
-      <p>OHCLV data from 2007-2025 <sub>last updated:2025-12-9</sub></p>
-      <a href="EURUSD OHCLV data.csv" class='btn-contact'><button>Download CSV</button></a>
-    </div>
-    <div class="data-card">
-      <h4>Equities 2024</h4>
-      <p>Daily OHLC data for major stocks.</p>
-      <a href="#">Download CSV</a>
-    </div>
-    <div class="data-card">
-      <h4>Macro Indicators</h4>
-      <p>CPI, PPI, GDP, Interest rates for ML models.</p>
-      <a href="#">Download CSV</a>
-    </div>
+    <!-- NFP Dataset -->
+<div class="dataset">
+  <h2>Non-Farm Payrolls (NFP)</h2>
+  <p>
+    Monthly U.S. jobs report data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Includes employment levels, revisions, and job creation breakdown.
+  </p>
+  <a href="NFP.csv" download>Download NFP Dataset</a>
+
+  <pre><code>
+# Example: Loading NFP dataset in Python
+import pandas as pd
+
+nfp = pd.read_csv("datasets/nfp.csv")
+print(nfp.head())
+  </code></pre>
+</div>
+
+<!-- CPI Dataset -->
+<div class="dataset">
+  <h2>Consumer Price Index (CPI)</h2>
+  <p>
+    Monthly inflation data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Useful for inflation trend analysis and ML forecasting.
+  </p>
+  <a href="CPI.csv" download>Download CPI Dataset</a>
+
+  <pre><code>
+# Example: Loading CPI dataset in Python
+import pandas as pd
+
+cpi = pd.read_csv("datasets/cpi.csv")
+print(cpi.tail())
+  </code></pre>
+</div>
+
+<!-- PPI Dataset -->
+<div class="dataset">
+  <h2>Producer Price Index (PPI)</h2>
+  <p>
+    Producer-side inflation data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Tracks input costs and inflation pipeline.
+  </p>
+  <a href="PPI.csv" download>Download PPI Dataset</a>
+
+  <pre><code>
+# Example: Loading PPI dataset in Python
+import pandas as pd
+
+ppi = pd.read_csv("datasets/ppi.csv")
+print(ppi.describe())
+  </code></pre>
+</div>
+
+<!-- GDP Dataset -->
+<div class="dataset">
+  <h2>Gross Domestic Product (GDP)</h2>
+  <p>
+    Quarterly GDP data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Covers growth, contractions, and revisions.
+  </p>
+  <a href="GDP.csv" download>Download GDP Dataset</a>
+
+  <pre><code>
+# Example: Loading GDP dataset in Python
+import pandas as pd
+
+gdp = pd.read_csv("datasets/gdp.csv")
+gdp.plot(x="Date", y="GDP", kind="line")
+  </code></pre>
+</div>
+
+<!-- OHLCV Dataset -->
+<div class="dataset">
+  <h2>OHLCV (EURUSD)</h2>
+  <p>
+    Daily market data (Open, High, Low, Close, Volume) for EURUSD (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Perfect for ML models like LSTMs and Random Forests.
+  </p>
+  <a href="EURUSD OHCLV data.csv" download>Download OHLCV Dataset</a>
+
+  <pre><code>
+# Example: Loading OHLCV dataset in Python
+import pandas as pd
+
+ohlcv = pd.read_csv("datasets/ohlcv.csv", parse_dates=["Date"])
+print(ohlcv.head())
+  </code></pre>
+</div>
+
+<!-- Yields Dataset -->
+<div class="dataset">
+  <h2>Bond Yields</h2>
+  <p>
+    Treasury yield curve data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Includes 2Y, 10Y, 30Y yields for macro analysis.
+  </p>
+  <a href="yield-curve.csv" download>Download Yields Dataset</a>
+
+  <pre><code>
+# Example: Loading Yields dataset in Python
+import pandas as pd
+
+yields = pd.read_csv("datasets/yields.csv")
+yields.plot(x="Date", y=["2Y","10Y","30Y"])
+  </code></pre>
+</div>
+
+<!-- Interest Rates Dataset -->
+<div class="dataset">
+  <h2>Interest Rates</h2>
+  <p>
+    Federal Reserve policy rate data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Covers rate hikes, cuts, and pauses.
+  </p>
+  <a href="INTEREST RATES.csv" download>Download Rates Dataset</a>
+
+  <pre><code>
+# Example: Loading Rates dataset in Python
+import pandas as pd
+
+rates = pd.read_csv("datasets/rates.csv")
+print(rates.tail(10))
+  </code></pre>
+</div>
+
+<!-- Retail Sales Dataset -->
+<div class="dataset">
+  <h2>Retail Sales</h2>
+  <p>
+    Consumer spending retail sales data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Tracks economic activity and demand cycles.
+  </p>
+  <a href="Retail sales.csv" download>Download Retail Sales Dataset</a>
+
+  <pre><code>
+# Example: Loading Retail Sales dataset in Python
+import pandas as pd
+
+retail = pd.read_csv("datasets/retailsales.csv")
+print(retail.info())
+  </code></pre>
+</div>
+
+<!-- Unemployment Rate Dataset -->
+<div class="dataset">
+  <h2>Unemployment Rate</h2>
+  <p>
+    U.S. unemployment data (2007–2025).  
+    Last updated: <strong>2025-12-09</strong>.  
+    Critical labor market indicator for ML models.
+  </p>
+  <a href="Unemployment Rate.csv" download>Download Unemployment Dataset</a>
+
+  <pre><code>
+# Example: Loading Unemployment dataset in Python
+import pandas as pd
+
+unemp = pd.read_csv("datasets/unemployment.csv")
+unemp.plot(x="Date", y="UnemploymentRate", kind="line")
+  </code></pre>
+</div>
+
     <!-- Add more datasets -->
   </div>
 </section>
@@ -219,5 +426,6 @@ footer .social a { margin:0 10px; color:#D4AF37; }
 
 </body>
 </html>
+
 
 

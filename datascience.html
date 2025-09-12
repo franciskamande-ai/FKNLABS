@@ -45,13 +45,13 @@ section h2 { font-size:36px; color:#D4AF37; text-align:center; margin-bottom:30p
 .models-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+  gap:0px;
   justify-items:center;
 }
 .model-card {
   background:#222;
   padding:20px;
-  border-radius:15px;
+  border-radius:10px;
   text-align:center;
   transition: transform .3s, background .3s;
   width:250px;
@@ -201,63 +201,13 @@ footer .social a { margin:0 10px; color:#D4AF37; }
     <div class="model-card">
       <h3>Gradient Boosted Decision Trees (XGBoost / LightGBM / CatBoost)</h3>
       <p>Gradient Boosted Decision Trees (GBMs) are one of the most widely used machine learning methods in finance and economics.
-
-🔹 Why it works on macro + market data:
-
-Nonlinear relationships: Markets react differently depending on conditions (e.g., unemployment rising during inflation is treated differently than during deflation). GBMs can capture such nonlinear interactions naturally.
-
-Feature importance: GBMs let us measure which indicators (NFP, CPI, GDP, rates) are most predictive for returns, volatility, or trends.
-
-Robustness: Handles missing data, categorical encodings, and noisy signals much better than linear regression.
-
-Speed & efficiency: LightGBM, for example, is extremely fast even with millions of rows.
-
-🔹 Limitations:
-
-GBMs are not time-aware by default → they treat inputs as independent rows.
-
-For time-series like OHLCV or yield curves, we must create lagged features (t-1, t-2 returns), rolling averages, volatility windows, macro event flags, etc.
-
-🔹 Example usage in your datasets:
-
-Predicting the next day’s direction of EURUSD using last 30 days of CPI, GDP, and OHLCV features.
-
-Estimating how much NFP surprises impact yields by using historical macro surprises + rate policy shifts.
-
-👉 GBM should be your baseline model — stable, interpretable, and surprisingly strong.</p> 
+      </p> 
     </div>
     
     <div class="model-card">
       <h3>Recurrent Neural Networks (LSTM / GRU / TFT)</h3>
       <p>Recurrent Neural Networks (RNNs) — especially LSTMs (Long Short-Term Memory) and GRUs (Gated Recurrent Units) — are designed for sequential data, which makes them powerful for financial time series and macroeconomic forecasting.
-
-🔹 Why it works on macro + market data:
-
-Captures memory: Economic effects are delayed. A rate hike today affects unemployment months later. LSTMs can model this sequential dependency.
-
-Handles multiple series: You can feed OHLCV + macro indicators into a single model to learn interactions over time.
-
-Flexible forecasting horizons: LSTMs can be adapted for single-step (next day) or multi-step (next quarter GDP) forecasting.
-
-Advanced extensions: Transformers (like the Temporal Fusion Transformer, TFT) combine the interpretability of GBMs with the sequence-handling of RNNs → currently state-of-the-art.
-
-🔹 Limitations:
-
-Data-hungry: Needs lots of history and careful tuning.
-
-Prone to overfitting on financial data if not regularized (dropout, weight decay, cross-validation).
-
-Slower to train compared to GBMs.
-
-🔹 Example usage in your datasets:
-
-Forecasting short-term FX volatility by feeding past OHLCV + macro events into an LSTM.
-
-Predicting quarterly GDP growth using sequences of inflation, rates, and employment figures.
-
-Combining deep learning with event embeddings (like “NFP release” as a feature) to capture how markets digest news.
-
-👉 LSTM/GRU (or TFT) should be your advanced research model — capturing dynamic time effects that tree models can’t..</p>
+      </p>
     </div>
     
     <!-- Add more model cards -->
@@ -478,6 +428,7 @@ unemp.plot(x="Date", y="UnemploymentRate", kind="line")
 
 </body>
 </html>
+
 
 
 

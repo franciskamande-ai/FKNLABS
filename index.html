@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
 <meta name="google-site-verification" content="QEk4yr1U4N9mOhVXOfVDtc2shBUvwKBrT_3-ZQJ61oA" />
-<meta name="description" content="FKN Labs offers free financial, technical, and fundamental datasets for data scientists and ML engineers.">
-<meta name="keywords" content="finance data, stock datasets,LABS,finance labs,FKNLABS, fknlabs,financial labs, forex data, machine learning,quant,finance,hedgefund, quantitative research">
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8271037411724238"
-     crossorigin="anonymous"></script>
+<meta name="description" content="FKNLABS - AI/ML Research Lab specializing in quantitative finance, trading models, and financial engineering. Open source models and datasets for data scientists.">
+<meta name="keywords" content="FKNLABS, AI research, machine learning, quantitative finance, trading models, Monte Carlo, deep learning, financial engineering, hedge fund, datasets">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FKNLABS | Portfolio & Research</title>
+<title>FKNLABS | AI/ML Research Lab | Quantitative Finance</title>
 <link rel="icon" type="image/png" href="fknlabs.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 /* --- Reset & Body --- */
@@ -20,125 +18,118 @@ a {text-decoration:none;color:inherit;}
 img {max-width:100%;border-radius:10px;}
 
 /* --- Navbar --- */
-nav {display:flex;justify-content:center;align-items:center;padding:20px 50px;background:#000;position:sticky;top:0;z-index:100;}
-nav .logo {font-family:'Playfair Display', serif;font-size:28px;color:#D4AF37;}
+nav {display:flex;justify-content:space-between;align-items:center;padding:20px 50px;background:#000;position:sticky;top:0;z-index:100;}
+nav .logo {font-family:'Playfair Display', serif;font-size:28px;color:#D4AF37;font-weight:bold;}
 nav ul {list-style:none;display:flex;}
 nav ul li {margin-left:30px;}
-nav ul li a {font-weight:bold;transition:.3s;}
+nav ul li a {font-weight:bold;transition:.3s;padding:5px 0;position:relative;}
 nav ul li a:hover {color:#D4AF37;}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #D4AF37;
+    transition: width 0.3s;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
 
 /* --- Hero --- */
-.hero {display:flex;flex-direction:column;justify-content:center;align-items:center;height:90vh;text-align:center;background:url('https://images.unsplash.com/photo-1565372914081-b8c7d10200d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDR8MHwxfHJhbmRvbXx8fHx8fHx8MTY5NDE0NDM4OA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;}
-.hero h1 {font-family:'Playfair Display', serif;font-size:60px;color:#D4AF37;}
-.hero p {font-size:24px;margin:20px 0;}
-.btn-primary {padding:12px 30px;background:#D4AF37;color:#000;font-weight:bold;border-radius:5px;transition:.3s;}
-.btn-primary:hover {background:#b6932d;}
+.hero {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:90vh;
+    text-align:center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1565372914081-b8c7d10200d8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5NDR8MHwxfHJhbmRvbXx8fHx8fHx8MTY5NDE0NDM4OA&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center/cover;
+    position: relative;
+}
+.hero h1 {font-family:'Playfair Display', serif;font-size:60px;color:#D4AF37;margin-bottom:20px;}
+.hero p {font-size:24px;margin:20px 0;max-width:700px;}
+.btn-primary {padding:12px 30px;background:#D4AF37;color:#000;font-weight:bold;border-radius:5px;transition:.3s;display:inline-block;}
+.btn-primary:hover {background:#b6932d;transform:translateY(-3px);}
 
 /* --- Section Headings --- */
-section h2 {font-family:'Playfair Display', serif;font-size:36px;margin-bottom:20px;color:#D4AF37;text-align:center;margin-top:50px;}
+section {padding:80px 20px;}
+section h2 {font-family:'Playfair Display', serif;font-size:36px;margin-bottom:40px;color:#D4AF37;text-align:center;position:relative;}
+section h2::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: #D4AF37;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /* --- About --- */
-.about {padding:50px 20px;text-align:center;max-width:1000px;margin:0 auto;}
-.about p {font-size:18px;margin-top:20px;}
+.about {max-width:1000px;margin:0 auto;text-align:center;}
+.about p {font-size:18px;margin-top:20px;line-height:1.8;}
 
-/* --- Highlights / Portfolio / Research --- */
-.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;padding:50px;}
-.card {background:#333;padding:20px;border-radius:10px;transition:.3s;}
-.card:hover {background:#444;}
-.card h3 {font-family:'Playfair Display', serif;color:#D4AF37;margin-bottom:10px;}
+/* --- Portfolio & Models Grid --- */
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px;}
+.card {background:#333;padding:25px;border-radius:10px;transition:.3s;height:100%;display:flex;flex-direction:column;border:1px solid #444;}
+.card:hover {background:#444;transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.3);}
+.card h3 {font-family:'Playfair Display', serif;color:#D4AF37;margin-bottom:15px;font-size:1.4rem;}
+.card p {flex-grow:1;margin-bottom:20px;line-height:1.6;}
+.card .btn-primary {align-self:flex-start;margin-top:auto;}
 
-/* --- Open Source Models --- */
-.models .card a {display:block;margin-top:10px;padding:8px 12px;background:#D4AF37;color:#000;text-align:center;border-radius:5px;transition:.3s;}
-.models .card a:hover {background:#b6932d;color:#fff;}
+/* --- Research Papers --- */
+.paper {max-width:1000px;margin:40px auto;background:#222;padding:40px;border-radius:10px;border-left:5px solid #D4AF37;}
+.paper h3 {color:#D4AF37;margin-bottom:20px;font-size:1.6rem;}
+.paper p, .paper ul {margin-bottom:20px;font-size:16px;line-height:1.7;}
+.paper ul {padding-left:20px;}
+.paper ul li {margin-bottom:10px;list-style:disc;}
+.paper a {color:#D4AF37;text-decoration:underline;font-weight:bold;transition:.3s;}
+.paper a:hover {color:#b6932d;}
 
-/* --- Paper Section --- */
-.paper {padding:50px 20px;max-width:1000px;margin:0 auto;background:#222;border-radius:10px;}
-.paper h3 {color:#D4AF37;margin-bottom:15px;}
-.paper p, .paper ul {margin-bottom:15px;font-size:16px;line-height:1.5;}
-.paper ul li {margin-left:20px;list-style:disc;}
+/* --- Models Section --- */
+.models .card {text-align:center;}
+.models .card i {font-size:2.5rem;color:#D4AF37;margin-bottom:15px;}
 
 /* --- Contact --- */
-.contact {padding:50px 20px;text-align:center;}
-.contact form {display:flex;flex-direction:column;max-width:500px;margin:0 auto;}
-.contact input, .contact textarea {margin:10px 0;padding:12px;border-radius:5px;border:none;}
-.contact button {padding:12px;background:#D4AF37;color:#000;font-weight:bold;border-radius:5px;transition:.3s;cursor:pointer;}
-.contact button:hover {background:#b6932d;}
-/* Recognition Section */
-#recognition {
-    padding: 50px 20px;
-    background: #111; /* slightly different dark to separate visually */
-}
+.contact {text-align:center;max-width:800px;margin:0 auto;}
+.contact-info {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;margin-top:40px;}
+.contact-card {background:#333;padding:25px;border-radius:10px;transition:.3s;}
+.contact-card:hover {background:#444;transform:translateY(-5px);}
+.contact-card i {font-size:2rem;color:#D4AF37;margin-bottom:15px;}
+.contact-card h3 {color:#D4AF37;margin-bottom:10px;}
 
-#recognition h2 {
-    text-align: center;
-    color: #D4AF37;
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-#recognition .grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-#recognition .card {
-    background: #222;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s, background 0.3s;
-}
-
-#recognition .card img {
-    max-width: 100px;
-    margin-bottom: 15px;
-    border-radius: 50%; /* optional, makes it circular */
-}
-
-#recognition .card h3 {
-    color: #D4AF37;
-    margin-bottom: 10px;
-}
-
-#recognition .card p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-#recognition .card:hover {
-    background: #333;
-    transform: translateY(-5px);
-}
-    /* Contact button on collaborator card */
-#recognition .btn-contact {
-    display: inline-block;
-    margin-top: 5px;
-    padding: 1px 2px;
-    background: #D4AF37;
-    color: #000;
-    font-weight: bold;
-    border-radius: 3px;
-    transition: 0.3s;
-    text-decoration: none;
-}
-
-#recognition .btn-contact:hover {
-    background: #b6932d;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-
+/* --- Recognition Section --- */
+#recognition {background:#111;text-align:center;}
+.recognition-content {max-width:1000px;margin:0 auto;}
+.recognition-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px;}
+.recognition-card {background:#222;padding:30px;border-radius:10px;transition:.3s;}
+.recognition-card:hover {background:#333;transform:translateY(-5px);}
+.recognition-card i {font-size:3rem;color:#D4AF37;margin-bottom:20px;}
+.recognition-card h3 {color:#D4AF37;margin-bottom:15px;}
 
 /* --- Footer --- */
-footer {background:#000;padding:30px;text-align:center;margin-top:50px;}
-footer .social a {margin:0 10px;color:#D4AF37;}
+footer {background:#000;padding:40px 20px;text-align:center;margin-top:50px;}
+footer .social {margin:20px 0;}
+footer .social a {margin:0 15px;color:#D4AF37;font-size:1.5rem;transition:.3s;}
+footer .social a:hover {color:#b6932d;transform:translateY(-3px);}
+footer p {margin-top:20px;color:#aaa;}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav {flex-direction:column;padding:15px;}
+    nav ul {margin-top:15px;}
+    nav ul li {margin:0 10px;}
+    .hero h1 {font-size:2.5rem;}
+    .hero p {font-size:1.2rem;}
+    section {padding:60px 15px;}
+    section h2 {font-size:1.8rem;}
+    .grid {grid-template-columns:1fr;}
+}
 </style>
-<meta name="google-site-verification" content="QEk4yr1U4N9mOhVXOfVDtc2shBUvwKBrT_3-ZQJ61oA" />
 </head>
 <body>
 
@@ -150,61 +141,69 @@ footer .social a {margin:0 10px;color:#D4AF37;}
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#models">Open Source</a></li>
-    <li><a href='datascience.html'>Models & Datasets </a></li>
-    <li><a href="https://fkntradinghub.netlify.app/">HEDGE FUND </a></li>
-    <li><a href="https://wa.me/254769043920?">Contact</a></li>
+    <li><a href="#recognition">Careers</a></li>
+    <li><a href="https://fkntradinghub.netlify.app/">FKNCAPITAL</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- Hero -->
 <header class="hero">
   <h1>FKNLABS</h1>
-  <p>Research. Models. Innovation.</p>
-  <a href="#portfolio" class="btn-primary">View My Work</a>
+  <p>AI/ML Research Lab | Quantitative Finance & Trading Systems</p>
+  <p>Building the next generation of financial AI models and open source tools</p>
+  <a href="#models" class="btn-primary">Explore Our Models</a>
 </header>
 
 <!-- About -->
 <section id="about" class="about">
-  <h2>About Me</h2>
-  <p>Hi, I’m FK — a Quant Trader, Financial Engineer in training, and ML enthusiast.  
-  I specialize in macroeconomic trends and trading models, with my portfolio achieving a 33% annual return in 2024 and 20% YTD.  
-  I’ve built advanced ML models, Monte Carlo simulations, neural networks, and finance-driven algorithms.  
-  My goal is to start Africa’s first research-driven elite hedge fund.</p>
+  <h2>About FKNLABS</h2>
+  <p>FKNLABS is an AI/ML research laboratory specializing in quantitative finance, algorithmic trading systems, and financial engineering. We develop cutting-edge machine learning models, trading algorithms, and quantitative research frameworks.</p>
+  <p>Our research drives FKNCAPITAL's proprietary trading operations while contributing to the open source community. We focus on Monte Carlo simulations, deep learning price predictors, macroeconomic analysis, and advanced financial engineering models.</p>
+  <p>All models developed at FKNLABS are deployed in production at FKNCAPITAL, creating a seamless research-to-trading pipeline.</p>
 </section>
 
 <!-- Portfolio -->
 <section id="portfolio">
-  <h2>Portfolio</h2>
-  <div class="grid">
-    <div style="max-height:150px; "class="card">
-      <h3>Monte Carlo Forex Simulator</h3>
-      <p>Python-based simulation of multiple currency pairs forecasting price distributions over 5–10 min intervals using historical data and correlations.</p>
-      <button><a style="color:black; background-color:yellow; border-radius:20px;" href="https://github.com/franciskamande-ai/MODELS/blob/main/Monte%20Carlo%20simulations.py" target="_blank">View code on Github</a></button>
-    </div>
+  <h2>Research Portfolio</h2>
   <div class="grid">
     <div class="card">
-      <h3>Testing MA strategy with Benchmark</h3>
-      <p>We backtested a Moving Averahge strategy with the S&P 500 as a benchmark.Result..? DIssapointing</p>
-      <button><a style="color:black; background-color:yellow; border-radius:20px;" href="https://github.com/franciskamande-ai/MODELS/blob/main/ma_analysis_backtest.py" target="_blank">View code on Github</a></button>
+      <h3>Monte Carlo Forex Simulator</h3>
+      <p>Python-based simulation of multiple currency pairs forecasting price distributions using historical data and correlations. Advanced probabilistic modeling for risk assessment and strategy testing.</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS/blob/main/Monte%20Carlo%20simulations.py" class="btn-primary" target="_blank">View Model</a>
+    </div>
+    <div class="card">
+      <h3>Moving Average Strategy Backtesting</h3>
+      <p>Comprehensive backtesting framework for Moving Average strategies with S&P 500 benchmark comparison. Performance analytics and optimization for systematic trading approaches.</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS/blob/main/ma_analysis_backtest.py" class="btn-primary" target="_blank">View Model</a>
     </div>
     <div class="card">
       <h3>Deep Learning Price Predictor</h3>
-      <p>Neural network predicting short-term price movements based on technical indicators, sentiment, and macroeconomic inputs.</p>
+      <p>Neural network architectures predicting short-term price movements using technical indicators, market sentiment, and macroeconomic inputs. LSTM and Transformer-based models.</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank">Explore Models</a>
     </div>
     <div class="card">
-      <h3>Financial Engineering Models</h3>
-      <p>Advanced derivatives pricing, portfolio optimization, and risk management models using Python, NumPy, and ML techniques.</p>
+      <h3>Options Pricing & Greeks</h3>
+      <p>Advanced derivatives pricing models including Black-Scholes implementations, binomial trees, and Monte Carlo methods for options valuation with comprehensive Greeks calculation.</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank">View Models</a>
     </div>
     <div class="card">
-      <h3>Macro Economic Dashboard</h3>
-      <p>Real-time data-driven insights on NFP, CPI, PPI, and other economic indicators affecting African and global markets.</p>
+      <h3>Macroeconomic Dashboard</h3>
+      <p>Real-time data-driven insights on economic indicators (NFP, CPI, PPI) affecting global markets. Integration with trading strategies and risk management systems.</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank">Explore Tools</a>
+    </div>
+    <div class="card">
+      <h3>Portfolio Optimization</h3>
+      <p>Modern portfolio theory implementations with risk-parity, Black-Litterman, and hierarchical risk parity approaches for multi-asset portfolio construction and management.</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank">View Models</a>
     </div>
   </div>
 </section>
 
-<!-- Research & Paper -->
+<!-- Research Papers -->
 <section id="research">
-  <h2>Research</h2>
+  <h2>Research Publications</h2>
+  
   <div class="paper">
     <h3>The Skyscraper Effect — Impact on Financial Markets</h3>
     <p>The Skyscraper Effect hypothesizes that record-breaking infrastructure projects, particularly skyscrapers, can act as economic and psychological signals affecting market behavior.</p>
@@ -216,8 +215,9 @@ footer .social a {margin:0 10px;color:#D4AF37;}
       <li>Case Study — Shanghai Tower: Market data indicated increased domestic and foreign investment interest post-completion.</li>
     </ul>
     <p>This research highlights how physical mega-projects can signal economic strength, influencing trading strategies and macroeconomic models. Future work involves integrating these signals into predictive ML models for market behavior.</p>
-    <a href="paper.pdf" style="color:#D4AF37;text-decoration:underline;">Download Full Paper (PDF)</a>
+    <a href="paper.pdf">Download Full Paper (PDF)</a>
   </div>
+  
   <div class="paper">
     <h3>The Quantified Anatomy of Retail Trading Failure</h3>
     <p>This research deconstructs the 95% retail trader failure rate through a multi-layered mathematical framework, demonstrating it's not an anomaly but an emergent property of the trading system itself.</p>
@@ -229,95 +229,123 @@ footer .social a {margin:0 10px;color:#D4AF37;}
       <li><strong>Leverage Acceleration Effect:</strong> Mathematical demonstration of how leverage non-linearly increases ruin probability</li>
     </ul>
     <p>This research provides a complete mathematical explanation for retail trading failure rates, combining transaction cost analysis, behavioral finance, and risk theory. The framework can be used to develop more robust trading systems and risk management protocols.</p>
-    <a href="quantified-trading-failure.pdf" style="color:#D4AF37;text-decoration:underline;">Download Full Paper (PDF)</a>
-</div>
+    <a href="quantified-trading-failure.pdf">Download Full Paper (PDF)</a>
+  </div>
 </section>
 
 <!-- Open Source Models -->
 <section id="models">
   <h2>Open Source Models</h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 40px;">All FKNLABS models are open source and actively used in production at FKNCAPITAL. Contribute, fork, or use these models in your own research and trading systems.</p>
+  
   <div class="grid models">
     <div class="card">
-      <h3>Monte Carlo Forex Simulator</h3>
-      <a class="btn-primary" href="https://github.com/franciskamande-ai/MODELS/blob/main/Monte%20Carlo%20simulations.py" target="_blank">View on GitHub</a>
+      <i class="fas fa-dice"></i>
+      <h3>Monte Carlo Simulator</h3>
+      <p>Advanced probabilistic modeling for forex and derivatives pricing</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS/blob/main/Monte%20Carlo%20simulations.py" class="btn-primary" target="_blank">View on GitHub</a>
     </div>
     <div class="card">
-      <h3>Deep Learning Price Predictor</h3>
-      <a class="btn-primary" href="https://fkntradinghub.netlify.app/Education" target="_blank">View on GitHub</a>
+      <i class="fas fa-chart-line"></i>
+      <h3>Strategy Backtesting</h3>
+      <p>Comprehensive framework for testing trading strategies with benchmarks</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS/blob/main/ma_analysis_backtest.py" class="btn-primary" target="_blank">View on GitHub</a>
     </div>
     <div class="card">
-      <h3>Macro Dashboard</h3>
-      <a href="https://fkntradinghub.netlify.app/Education" target="_blank">View on FKN Capital</a>
+      <i class="fas fa-network-wired"></i>
+      <h3>Deep Learning Models</h3>
+      <p>Neural networks for price prediction and pattern recognition</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank">Explore on GitHub</a>
+    </div>
+    <div class="card">
+      <i class="fas fa-calculator"></i>
+      <h3>Financial Engineering</h3>
+      <p>Options pricing, portfolio optimization, and risk management models</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank">Explore on GitHub</a>
+    </div>
+  </div>
+  
+  <div style="text-align:center; margin-top:40px;">
+    <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank" style="font-size:1.1rem; padding:15px 30px;">
+      <i class="fab fa-github"></i> Explore All Models on GitHub
+    </a>
+  </div>
+</section>
+
+<!-- Recognition & Careers -->
+<section id="recognition">
+  <h2>Join Our Team</h2>
+  <div class="recognition-content">
+    <p style="max-width:800px; margin:0 auto 40px; text-align:center;">FKNLABS is expanding and looking for talented researchers and engineers to join our mission of building Africa's premier quantitative research lab.</p>
+    
+    <div class="recognition-grid">
+      <div class="recognition-card">
+        <i class="fas fa-brain"></i>
+        <h3>AI/ML Engineers</h3>
+        <p>Develop cutting-edge machine learning models for financial markets. Experience with PyTorch, TensorFlow, and time series analysis preferred.</p>
+      </div>
+      <div class="recognition-card">
+        <i class="fas fa-chart-bar"></i>
+        <h3>Quantitative Researchers</h3>
+        <p>Research and develop trading strategies, risk models, and financial algorithms. Strong mathematical and statistical background required.</p>
+      </div>
+      <div class="recognition-card">
+        <i class="fas fa-code"></i>
+        <h3>Software Engineers</h3>
+        <p>Build robust trading systems, data pipelines, and research infrastructure. Python, C++, and system architecture experience valued.</p>
+      </div>
+    </div>
+    
+    <div style="text-align:center; margin-top:40px;">
+      <p>Interested in collaborating or joining our team?</p>
+      <a href="#contact" class="btn-primary" style="margin-top:15px;">Get In Touch</a>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact" class="contact">
-  <h2>Contact</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message" rows="5" required></textarea>
-    <a href="https://wa.me/254769043920?text=Hello%20FKNLABS!" target="_blank">
-    <button>Message on WhatsApp</button>
-    </a>
-  </form>
-</section>
-<!-- Recognition Section -->
-<section id="recognition">
- <!-- <h2>Recognition & Collaborators</h2>
-    
-    <!-- Add more collaborators as needed -->
-    <!--
-    <div class="card">
-      <img src="assets/images/collaborator2.png" alt="Collaborator Name">
-      <h3>Collaborator Name</h3>
-      <p>Short description of contribution.</p>
+  <h2>Contact FKNLABS</h2>
+  <p>Have questions about our research, want to collaborate, or interested in joining our team? Get in touch.</p>
+  
+  <div class="contact-info">
+    <div class="contact-card">
+      <i class="fab fa-whatsapp"></i>
+      <h3>WhatsApp</h3>
+      <p>+254 769 053 920</p>
+      <a href="https://wa.me/254769053920" class="btn-primary" target="_blank" style="margin-top:15px;">Message Us</a>
     </div>
-    -->
+    <div class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email</h3>
+      <p>fkamande264@gmail.com</p>
+      <a href="mailto:fkamande264@gmail.com" class="btn-primary" style="margin-top:15px;">Send Email</a>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-github"></i>
+      <h3>GitHub</h3>
+      <p>Explore our open source models and contribute to our research</p>
+      <a href="https://github.com/francis-kamande-ai/MODELS" class="btn-primary" target="_blank" style="margin-top:15px;">View Repository</a>
+    </div>
+    <div class="contact-card">
+      <i class="fas fa-building"></i>
+      <h3>FKNCAPITAL</h3>
+      <p>Our proprietary trading firm using FKNLABS models in production</p>
+      <a href="https://fkntradinghub.netlify.app/" class="btn-primary" target="_blank" style="margin-top:15px;">Visit Site</a>
+    </div>
   </div>
 </section>
-
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2025 FKNLABS | Designed by FK</p>
   <div class="social">
-    <a href="https://github.com/franciskamande-ai/">GitHub</a>
-    <a href="https://www.linkedin.com/in/francis-kamande-918a25328?originalSubdomain=ke">LinkedIn</a>
+    <a href="https://github.com/francis-kamande-ai/MODELS" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/francis-kamande-918a25328?originalSubdomain=ke" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://fkntradinghub.netlify.app/" target="_blank"><i class="fas fa-chart-line"></i></a>
   </div>
+  <p>&copy; 2025 FKNLABS | AI/ML Research Laboratory</p>
+  <p>All models deployed in production at <a href="https://fkntradinghub.netlify.app/" style="color:#D4AF37;">FKNCAPITAL</a></p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
